@@ -15,9 +15,8 @@ class CreateTagTampilsTable extends Migration
     {
         Schema::create('tag_tampils', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('id_menu');
-
             $table->string('short');
+            $table->unsignedInteger('id_menu');
             $table->unsignedInteger('id_tag');
             $table->string('link');
             $table->boolean('is_active')->default(TRUE);

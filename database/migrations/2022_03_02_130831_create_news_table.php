@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePolingMenusTable extends Migration
+class CreateNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePolingMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('poling_menus', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('id_polingsoal');
-            $table->unsignedInteger('id_menu');
+            $table->sting('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreatePolingMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('poling_menus');
+        Schema::dropIfExists('news');
     }
 }

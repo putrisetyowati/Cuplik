@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CounterNews extends Model
 {
     use HasFactory;
+
+    public function news()
+    {
+        return $this->belongsTo(News::class, 'id_berita', 'id'); 
+    }
 }

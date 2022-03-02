@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PolingSoal extends Model
 {
     use HasFactory;
+
+    public function polingMenu()
+    {
+        return $this->hasMany(PolingMenu::class);
+    }
 }

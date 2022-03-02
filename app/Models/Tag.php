@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+
+    public function tagNews()
+    {
+        return $this->hasMany(TagNews::class);
+    }
+
+    public function tagTampil()
+    {
+        return $this->hasMany(TagTampil::class);
+    }
 }

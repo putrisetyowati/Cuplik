@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Polling extends Model
 {
     use HasFactory;
+
+    public function polingJawaban()
+    {
+        return $this->belongsTo(polingJawaban::class, 'id_polingjawaban', 'id');
+    }
 }
