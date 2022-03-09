@@ -11,6 +11,6 @@ class CounterNews extends Model
 
     public function news()
     {
-        return $this->belongsTo(News::class, 'id_berita', 'id'); 
+        return $this->belongsTo(News::class, 'id_berita', 'id'); //many to one
     }
 }

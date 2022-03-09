@@ -11,7 +11,7 @@ class Menu extends Model
 
     public function gallery()
     {
-        return $this->hasMany(Gallery::class);
+        return $this->hasMany(Gallery::class); //one to many
     }
 
     public function content()

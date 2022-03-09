@@ -11,6 +11,6 @@ class Gallery extends Model
 
     public function menu()
     {
-        return $this->belongsTo(Menu::class, 'id_menu', 'id');
+        return $this->belongsTo(Menu::class, 'id_menu', 'id'); //many to one
     }
 }

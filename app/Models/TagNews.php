@@ -14,8 +14,8 @@ class TagNews extends Model
         return $this->belongsTo(Tag::class, 'id_tag', 'id');
     }
   
-    public function berita()
+    public function news()
     {
-        return $this->belongsTo(Berita::class, 'id_berita', 'id');
+        return $this->belongsTo(News::class, 'id_berita', 'id');
     }
 }
