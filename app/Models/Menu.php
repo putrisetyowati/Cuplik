@@ -9,23 +9,7 @@ class Menu extends Model
 {
     use HasFactory;
 
-    public function gallery()
-    {
-        return $this->hasMany(Gallery::class); //one to many
-    }
+    protected $table = 'menus';
+    protected $primaryKey = 'id';
 
-    public function content()
-    {
-        return $this->hasMany(Content::class);
-    }
-
-    public function polingMenu()
-    {
-        return $this->hasMany(PolingMenu::class);
-    }
-
-    public function tagTampil()
-    {
-        return $this->hasMany(TagTampil::class);
-    }
 }

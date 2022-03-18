@@ -9,18 +9,7 @@ class News extends Model
 {
     use HasFactory;
 
-    public function counterNews()
-    {
-        return $this->hasMany(CounterNews::class); 
-    }
+    protected $table = 'news';
+    protected $primaryKey = 'id';
 
-    public function newsImage()
-    {
-        return $this->hasMany(newsImage::class); 
-    }
-
-    public function tagNews()
-    {
-        return $this->hasMany(TagNews::class); 
-    }
 }

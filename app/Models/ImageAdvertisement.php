@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ImageAdvertisement extends Model
 {
     use HasFactory;
+
+    protected $table = 'image_advertisements';
+    protected $primaryKey = 'id';
 }
