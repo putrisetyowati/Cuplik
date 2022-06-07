@@ -12,7 +12,7 @@
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
                                 <p class="font-bold text-xl">BERITA</p>
-                                <p class="text-lg">45</p>
+                                <p class="text-lg">0</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,7 +26,7 @@
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
                                 <p class="font-bold text-xl">VIDEO</p>
-                                <p class="text-lg">5</p>
+                                <p class="text-lg">0</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,7 +40,7 @@
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
                                 <p class="font-bold text-xl">IKLAN BARIS</p>
-                                <p class="text-lg">40</p>
+                                <p class="text-lg">0</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,7 +54,7 @@
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
                                 <p class="font-bold text-xl">CURHAT RAKYAT</p>
-                                <p class="text-lg">79</p>
+                                <p class="text-lg">0</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -17,6 +17,7 @@ class CreateImageAdvertisementsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('posisi');
+            $table->text('image');
             $table->timestamps();
         });
     }

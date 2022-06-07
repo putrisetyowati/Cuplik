@@ -15,8 +15,46 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.dashboard.index');
+    return view('tes');
 });
+
+Auth::routes();
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home1', function () {
+    return view ('member.main.index');
+});
+Route::get('/sosial', function () {
+    return view ('member.sosial.index');
+});
+Route::get('/politik', function () {
+    return view ('member.politik.index');
+});
+Route::get('/hukum', function () {
+    return view ('member.hukum.index');
+});
+Route::get('/ekonomi', function () {
+    return view ('member.ekonomi.index');
+});
+Route::get('/ragam', function () {
+    return view ('member.ragam.index');
+});
+Route::get('/luarnegeri', function () {
+    return view ('member.luar-negeri.index');
+});
+Route::get('/iptek', function () {
+    return view ('member.iptek.index');
+});
+Route::get('/gayahidup', function () {
+    return view ('member.gaya-hidup.index');
+});
+Route::get('/bola', function () {
+    return view ('member.bola.index');
+});
+Route::get('berita', function () {
+    return view ('member.berita');
+});
+
 
 
 Route::group([
@@ -24,7 +62,7 @@ Route::group([
     'namespace' => 'Admin',
     'as' => 'admin.'
 ], function() {
-    // Route::group(['middleware' => ['auth', 'role:admin']], function() {
+    Route::group(['middleware' => ['auth']], function() {
         Route::resource('dashboard', DashboardController::class);
         Route::resource('news', NewsController::class);
         Route::resource('curhat-rakyat', CurhatRakyatController::class);
@@ -33,18 +71,8 @@ Route::group([
         Route::resource('iklan-gambar', ImageAdvertisementController::class);
         Route::resource('poling', PolingController::class);
         Route::resource('video', VideoController::class);
-    // });
+    });
 });
 
-Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
