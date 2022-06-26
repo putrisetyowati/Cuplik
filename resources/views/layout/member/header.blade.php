@@ -21,4 +21,9 @@
 
         <!-- Template Stylesheet -->
         <link href="member/css/style.css" rel="stylesheet">
+        <style>
+            .iklan {
+                background-color : #ebebeb;
+            }
+        </style>
     </head>

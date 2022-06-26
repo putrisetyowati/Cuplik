@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('tes');
+    return view('coba');
 });
 
 Auth::routes();
@@ -71,6 +71,31 @@ Route::group([
         Route::resource('iklan-gambar', ImageAdvertisementController::class);
         Route::resource('poling', PolingController::class);
         Route::resource('video', VideoController::class);
+
+        Route::group([
+            'prefix' => 'setting',
+            'namespace' => 'Setting',
+            'as' => 'setting.'
+        ], function(){
+            Route::resource('menu', MenuController::class);
+            Route::resource('tag', TagController::class);
+            Route::resource('posisi-iklan', PosisiIklanController::class);
+            Route::resource('tag-sub', TagSubController::class);
+            Route::resource('member', MemberController::class);
+        });
+
+        Route::group([
+            'prefix' => 'tentangkami',
+            'namespace' => 'TentangKami',
+            'as' => 'tentangkami.'
+        ], function(){
+            Route::resource('kontak', KontakController::class);
+            Route::resource('tentang-kami', TentangKamiController::class);        
+            Route::resource('redaksi', RedaksiController::class);
+            Route::resource('disclaimer', DisclaimerController::class);
+        });
+        
+ 
     });
 });
 

@@ -85,27 +85,27 @@
                             <div class="sidebar-widget">
                                 <h2 class="sw-title">Curhat Rakyat</h2>
                                 <div class="news-list">
-                                    <div class="nl-item">
-                                         <div class="nl-title">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        </div>
-                                    </div>
-                                    <div class="nl-item">
+                                    <div class="nl-item mb-n1 border iklan">                                        
                                         <div class="nl-title">
                                             <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                         </div>
                                     </div>
-                                    <div class="nl-item">
+                                    <div class="nl-item mb-n1 border iklan">                                       
                                         <div class="nl-title">
                                             <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                         </div>
                                     </div>
-                                    <div class="nl-item">
+                                    <div class="nl-item mb-n1 border iklan">                                        
                                         <div class="nl-title">
                                             <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                         </div>
                                     </div>
-                                    <div class="nl-item">
+                                    <div class="nl-item mb-n1 border iklan">                                        
+                                        <div class="nl-title">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                        </div>
+                                    </div>
+                                    <div class="nl-item mb-n1 border iklan">
                                         <div class="nl-title">
                                             <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                         </div>
@@ -158,90 +158,37 @@
                                                     <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                                 </div>
                                             </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2 class="sw-title">Iklan Baris</h2>
+                                <div class="news-list">
+                                    <div class="nl-item mb-n1 border iklan">                                        
+                                        <div class="nl-title">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                         </div>
-                                        <div id="popular" class="container tab-pane fade">
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-4.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-3.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-2.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-1.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-2.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="nl-item mb-n1 border iklan">                                       
+                                        <div class="nl-title">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                         </div>
-                                        <div id="latest" class="container tab-pane fade">
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-3.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-4.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-5.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-4.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
-                                            <div class="tn-news">
-                                                <div class="tn-img">
-                                                   <img src="member/img/news-350x223-3.jpg" />
-                                                </div>
-                                                <div class="tn-title">
-                                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="nl-item mb-n1 border iklan">                                        
+                                        <div class="nl-title">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                        </div>
+                                    </div>
+                                    <div class="nl-item mb-n1 border iklan">                                        
+                                        <div class="nl-title">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                        </div>
+                                    </div>
+                                    <div class="nl-item mb-n1 border iklan">
+                                        <div class="nl-title">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                         </div>
                                     </div>
                                 </div>
