@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -14,55 +15,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('coba');
-});
+// Route::get('/', function () {
+//     return view('coba');
+// });
 
 Auth::routes();
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home1', function () {
-    return view ('member.main.index');
-});
-Route::get('/sosial', function () {
-    return view ('member.sosial.index');
-});
-Route::get('/politik', function () {
-    return view ('member.politik.index');
-});
-Route::get('/hukum', function () {
-    return view ('member.hukum.index');
-});
-Route::get('/ekonomi', function () {
-    return view ('member.ekonomi.index');
-});
-Route::get('/ragam', function () {
-    return view ('member.ragam.index');
-});
-Route::get('/luarnegeri', function () {
-    return view ('member.luar-negeri.index');
-});
-Route::get('/iptek', function () {
-    return view ('member.iptek.index');
-});
-Route::get('/gayahidup', function () {
-    return view ('member.gaya-hidup.index');
-});
-Route::get('/bola', function () {
-    return view ('member.bola.index');
-});
-Route::get('berita', function () {
-    return view ('member.berita');
-});
+// Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
+Route::get('/',[homeController::class, 'home'])->name('home');
+// Route::get('/home',[homeController::class, 'home'])->name('index');
+Route::get('/tagsub/{id}',[homeController::class, 'tagsub'])->name('tagsub');
+Route::get('/page',[homeController::class, 'page'])->name('page');
 
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
     'as' => 'admin.'
 ], function() {
-    Route::group(['middleware' => ['auth']], function() {
+    Route::group(['middleware' => ['role:admin','auth']], function() {
         Route::resource('dashboard', DashboardController::class);
         Route::resource('news', NewsController::class);
         Route::resource('curhat-rakyat', CurhatRakyatController::class);
@@ -81,6 +53,7 @@ Route::group([
             Route::resource('tag', TagController::class);
             Route::resource('posisi-iklan', PosisiIklanController::class);
             Route::resource('tag-sub', TagSubController::class);
+            Route::resource('register', RegisterController::class);
             Route::resource('member', MemberController::class);
         });
 
@@ -93,11 +66,55 @@ Route::group([
             Route::resource('tentang-kami', TentangKamiController::class);        
             Route::resource('redaksi', RedaksiController::class);
             Route::resource('disclaimer', DisclaimerController::class);
+            Route::resource('pedoman', PedomanController::class);
         });
         
  
     });
 });
 
+Route::group([
+    'prefix' => 'editor',
+    'namespace' => 'Editor',
+    'as' => 'editor.'
+], function() {
+    Route::group(['middleware' => ['role:editor','auth']], function() {
+        Route::resource('dashboard', DashboardController::class);
+        Route::resource('news', NewsController::class);
+        Route::resource('curhat-rakyat', CurhatRakyatController::class);
+        Route::resource('covid-19', CovidController::class);
+        Route::resource('iklan-baris', LineAdvertisementController::class);
+        Route::resource('iklan-gambar', ImageAdvertisementController::class);
+        Route::resource('poling', PolingController::class);
+        Route::resource('video', VideoController::class);
+
+        Route::group([
+            'prefix' => 'setting',
+            'namespace' => 'Setting',
+            'as' => 'setting.'
+        ], function(){
+            Route::resource('menu', MenuController::class);
+            Route::resource('tag', TagController::class);
+            Route::resource('register', RegisterController::class);
+            Route::resource('posisi-iklan', PosisiIklanController::class);
+            Route::resource('tag-sub', TagSubController::class);
+            Route::resource('member', MemberController::class);
+        });
+        
+ 
+    });
+});
+
+
+// Route::group([
+//     'prefix' => 'member',
+//     'namespace' => 'Member',
+//     'as' => 'member.'
+// ], function() {
+//     Route::group(['middleware' => ['auth']], function() {
+        
+//     });
+
+// });
 
 

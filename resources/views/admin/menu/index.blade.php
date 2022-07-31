@@ -1,6 +1,7 @@
 @extends('admin.app')
 @section('title','Menu')
 @section('content')
+
 <div class="w-full mt-12">
     <div class="grid grid-cols-3 gap-4 mb-4">
         <div>

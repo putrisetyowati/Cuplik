@@ -22,23 +22,23 @@
 
             <div class="mt-2 w-full">
                 <label class="block text-sm text-gray-900" for="image">Gambar</label>
-                <input class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none {{ $errors->has('image') ? 'is-invalid' : '' }}" type="file" id="image" name="image" id="formFile" value="{{old('image', $image_advertisement->image)}}">
+                <img src=" {{asset('storage/img/iklan-gambar/'. $image_advertisement->image)}}" alt="Image" class="avatar-img rounded-circle">
+                <input class="form-control block w-full px-3 py-1.5 text-base font-normal {{ $errors->has('image') ? 'is-invalid' : '' }} text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"  id="image" name="image" type="file" id="formFile" value="{{old('image', $image_advertisement->image)}}">
                 @if($errors->has('image'))
                 <div class="text-red-600">{{$errors->first('image')}}</div>
                 @endif
             </div>
           
             <div class="mt-2">
-                <label class="block text-sm text-gray-900" for="posisi">Posisi</label>
+                <label class="block text-sm text-gray-900" for="id_posisi">Posisi</label>
                 <div class="relative w-full py-1 text-gray-700 rounded">
                     <select id="posisi"
-                        class="block p-2 w-full bg-gray-200 appearance-none focus:outline-none {{ $errors->has('posisi') ? 'is-invalid' : '' }}"
-                        name="posisi">
+                        class="block p-2 w-full bg-gray-200 appearance-none focus:outline-none {{ $errors->has('id_posisi') ? 'is-invalid' : '' }}" id="id_posisi" name="id_posisi" value="{{old('id_posisi', $image_advertisement->id_posisi)}}"
+                        name="id_posisi">
                         <option value="">Pilih Data</option>
-                        <option value="Atas">Atas</option>
-                        <option value="Bawah">Bawah</option>
-                        <option value="Kiri">Kiri</option>
-                        <option value="Kanan">Kanan</option>
+                        @foreach ($posisi as $data)
+                            <option value="{{$data->id}}">{{ $data->title }}</option>
+                        @endforeach
                     </select>
                     <div class="flex items-center pointer-events-none absolute inset-y-0 right-0 px-2 text-gray-700">
                         <i class="fas fa-chevron-down"></i>
@@ -55,18 +55,18 @@
                 </div>
                     <div>
                         <div class="form-check">
-                            <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer  {{ $errors->has('is_active') ? 'is-invalid' : '' }}" type="radio" name="is_active" id="is_active1">
+                            <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer {{ $errors->has('is_active') ? 'is-invalid' : '' }}" type="radio" name="is_active" id="is_active1" value="{{old('is_active')}}">
                             <label class="form-check-label inline-block text-gray-800" for="is_active1">
                                 Yes
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer {{ $errors->has('is_active') ? 'is-invalid' : '' }}" type="radio" name="is_active" id="is_active2" checked>
+                            <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer  {{ $errors->has('is_active') ? 'is-invalid' : '' }}" type="radio" name="is_active" id="is_active2" value="{{old('is_active')}}"checked>
                             <label class="form-check-label inline-block text-gray-800" for="is_active2">
                                 No
                             </label>
                         </div>
-                    </div>
+                    </div>                    
             </div>
 
             <div class="mt-6">

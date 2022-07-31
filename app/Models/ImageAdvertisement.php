@@ -11,4 +11,9 @@ class ImageAdvertisement extends Model
 
     protected $table = 'image_advertisements';
     protected $primaryKey = 'id';
+
+    public function posisi()
+    {
+        return $this->belongsTo(Position::class, 'id_posisi','id');
+    }
 }

@@ -1,13 +1,24 @@
 @extends('admin.app')
-@section('title','Redaksi')
+@section('title','Tentang Kami')
 @section('content')
 
 <div class="w-full mt-6 pl-0 lg:pl-2">
     <p class="text-xl pb-6 flex items-center">
-        <i class="fas fa-list mr-3"></i> Redaksi
+        <i class="fas fa-list mr-3"></i> Tentang Kami
     </p>
     <div class="leading-loose">
-        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="">
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+<!-- INGET ACTIONNYA UPDATE -->
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="{{route('admin.tentangkami.tentang-kami.create', $about->id)}}">
             @csrf
             <!-- <p class="text-xl text-gray-800 font-semibold pb-4">Kontak</p> -->
 

@@ -12,7 +12,7 @@
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
                                 <p class="font-bold text-xl">BERITA</p>
-                                <p class="text-lg">0</p>
+                                <p class="text-lg">{{$news}}</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,8 +25,8 @@
                     <div class="pl-1 w-60 h-20 bg-blue-500 rounded-lg shadow-md">
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
-                                <p class="font-bold text-xl">VIDEO</p>
-                                <p class="text-lg">0</p>
+                                <p class="font-bold text-xl">MENU</p>
+                                <p class="text-lg">{{$menu}}</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,8 +39,8 @@
                     <div class="pl-1 w-60 h-20 bg-orange-500 rounded-lg shadow-md">
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
-                                <p class="font-bold text-xl">IKLAN BARIS</p>
-                                <p class="text-lg">0</p>
+                                <p class="font-bold text-xl">EDITOR</p>
+                                <p class="text-lg">{{$editor}}</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -53,8 +53,8 @@
                     <div class="pl-1 w-60 h-20 bg-fuchsia-600 rounded-lg shadow-md">
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
-                                <p class="font-bold text-xl">CURHAT RAKYAT</p>
-                                <p class="text-lg">0</p>
+                                <p class="font-bold text-xl">IKLAN GAMBAR</p>
+                                <p class="text-lg">{{$iklan}}</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,7 +69,7 @@
                 <!-- Bagian 2 -->
         <div class="w-full mt-12">
              <p class="text-xl pb-3 flex items-center">
-                 <i class="fas fa-list mr-3"></i> Latest Reports
+                 <i class="fas fa-list mr-3"></i> REKAP
              </p>
                 <!-- tab -->
              <div class="w-full mt-6" x-data="{ openTab: 1 }">
@@ -94,61 +94,21 @@
                                     <table class="min-w-full bg-white">
                                         <thead class="bg-gray-800 text-white">
                                             <tr>
-                                                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-                                                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Last name</th>
-                                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Phone</th>
-                                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
+                                                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Username</th>
+                                                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Jumlah Upload</th>
+                                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bulan</th>
                                             </tr>
                                         </thead>
                                         <tbody class="text-gray-700">
+                                            @foreach ($user as $data)
                                             <tr>
-                                                <td class="w-1/3 text-left py-3 px-4">Lian</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Smith</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
+                                                <td class="w-1/3 text-left py-3 px-4">{{$data->username}}</td>
+                                                <td class="w-1/3 text-left py-3 px-4">{{$data->total}}</td>
+                                                <td class="w-1/3 text-left py-3 px-4">10</td>
                                             </tr>
-                                            <tr class="bg-gray-200">
-                                                <td class="w-1/3 text-left py-3 px-4">Emma</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Johnson</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="w-1/3 text-left py-3 px-4">Oliver</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Williams</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                            </tr>
-                                            <tr class="bg-gray-200">
-                                                <td class="w-1/3 text-left py-3 px-4">Isabella</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Brown</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="w-1/3 text-left py-3 px-4">Lian</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Smith</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                            </tr>
-                                            <tr class="bg-gray-200">
-                                                <td class="w-1/3 text-left py-3 px-4">Emma</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Johnson</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="w-1/3 text-left py-3 px-4">Oliver</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Williams</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                            </tr>
-                                            <tr class="bg-gray-200">
-                                                <td class="w-1/3 text-left py-3 px-4">Isabella</td>
-                                                <td class="w-1/3 text-left py-3 px-4">Brown</td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                                                <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                                            </tr>
+                                                
+                                            @endforeach
+                                          
                                         </tbody>
                                     </table>
                                 </div>

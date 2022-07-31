@@ -15,7 +15,7 @@ class CreatePositionTable extends Migration
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->id();
-            $table->string('sortir');
+            $table->string('title');
             $table->string('lebar');
             $table->string('tinggi');
             $table->boolean('is_active')->default(TRUE);

@@ -99,7 +99,13 @@ class TagSubController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tagsub = SubTag::findorfail($id);
+        $menus = Menu::all();
+        $tags = Tag::all();
+
+        return view('admin.tag-sub.edit')->with('tagsub', $tagsub)
+        ->with('menus', $menus)
+        ->with('tags', $tags);
     }
 
     /**
@@ -111,7 +117,34 @@ class TagSubController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'short' => 'required',
+            'id_menu' => 'required',
+            'id_tag' => 'required',
+            'is_active' => 'required',
+        ];
+
+        $messages = [
+            'short.required' => 'Sortir harus diisi',
+            'id_menu.required' => 'Lebar harus diisi',
+            'id_tag.required' => 'Lebar harus numerik',
+            'is_active.required' => 'Default harus diisi',
+        ];
+
+        $this->validate($request, $rules, $messages);
+
+
+        $tagsub = SubTag::find($id);
+        $tagsub->short = $request->short;
+        $tagsub->id_menu = $request->id_menu;
+        $tagsub->id_tag = $request->id_tag;
+        $tagsub->is_active = $request->is_active;
+
+        // dd($tagsub);
+    
+        $tagsub->save();
+
+        return redirect('admin/setting/tag-sub')->with('status', 'Tag Sub update!');
     }
 
     /**

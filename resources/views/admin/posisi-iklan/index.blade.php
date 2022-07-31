@@ -18,7 +18,7 @@
             <thead class="bg-gray-800 text-white">
                 <tr>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Id</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Sortir</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Title</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Lebar</th>                    
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Tinggi</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Tampil</th>
@@ -33,7 +33,7 @@
                     @foreach ($position as $data)
                     <tr>
                         <td class="text-left py-3 px-4">{{$i++}}</td>
-                        <td class="text-left py-3 px-4">{{$data->sortir}}</td>
+                        <td class="text-left py-3 px-4">{{$data->title}}</td>
                         <td class="text-left py-3 px-4">{{$data->lebar}}</td>
                         <td class="text-left py-3 px-4">{{$data->tinggi}}</td>
                         <td class="text-left py-3 px-4">{{$data->is_active}}</td> 

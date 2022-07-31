@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\News;
+use App\Models\Menu;
+use App\Models\ImageAdvertisement;
 
 class DashboardController extends Controller
 {
@@ -14,7 +18,19 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        $user = User::all();
+        $news = News::all()->count();
+        $menu = Menu::all()->count();
+        $editor = User::all()->count();
+        $iklan = ImageAdvertisement::all()->count();
+       
+        // dd($user);
+        return view('admin.dashboard.index')
+            ->with('user', $user)
+            ->with('editor', $editor)
+            ->with('news', $news)
+            ->with('iklan', $iklan)
+            ->with('menu', $menu);
     }
 
     /**

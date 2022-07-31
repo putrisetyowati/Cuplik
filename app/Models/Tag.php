@@ -16,5 +16,10 @@ class Tag extends Model
     {
         return $this->hasMany(SubTag::class);
     }
+
+    public function news()
+    {
+        return $this->BelongsToMany(News::class);
+    }
 }
 

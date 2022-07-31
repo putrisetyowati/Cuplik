@@ -11,4 +11,9 @@ class Position extends Model
 
     protected $table = 'positions';
     protected $primaryKey = 'id';
+
+    public function iklanGambar()
+    {
+        return $this->hasMany(ImageAdvertisement::class);
+    }
 }

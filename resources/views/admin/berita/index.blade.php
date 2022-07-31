@@ -19,8 +19,8 @@
                 <tr>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Title</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date</th>                    
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Content</th>                    
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Gambar</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date</th>                   
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Source</th>                    
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Desc</th>
                     <!-- <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Menu</th>
@@ -38,8 +38,16 @@
                 <tr>
                     <td class="text-left py-3 px-4">{{$i++}}</td>
                     <td class="text-left py-3 px-4">{{$data->title}}</td>
+                    <td class="text-left py-3 px-4">
+                        @if ($data->image)
+                        <img class="w-56 h-20 object-cover object-center" src="{{ asset('storage/img/news/' . $data->image) }}"
+                            alt="banner">
+                        @else
+                        <img class="w-56 h-20 object-cover object-center" src="{{ asset('img/no-image.png') }}"
+                            alt="no-image">
+                        @endif
+                    </td>
                     <td class="text-left py-3 px-4">{{$data->created_at}}</td>
-                    <td class="text-left py-3 px-4">{{$data->content}}</td>
                     <td class="text-left py-3 px-4">{{$data->source}}</td>
                     <td class="text-left py-3 px-4">{{$data->desc}}</td>
                     @if ($data->is_active == 1)

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\admin;
 use App\Models\News;
+use App\Models\User;
+use App\Models\Tag;
+use App\Models\Menu;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,9 +18,12 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::all();
+        $news = News::with('menu')
+        ->latest()
+        ->paginate(5);
 
-        return view ('admin.berita.index')->with('news', $news);
+        return view ('admin.berita.index')
+        ->with('news', $news);
     }
 
     /**
@@ -26,7 +33,13 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view ('admin.berita.create');
+        $menus = Menu::all();
+        $tags = Tag::all();
+        
+
+        return view ('admin.berita.create')
+            ->with('menus', $menus)
+            ->with('tags', $tags);
     }
 
     /**
@@ -38,11 +51,8 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            // 'user_id' => 'required',
-            // 'tag_id' => 'required',
-            // 'menu_id' => 'required',
+            'id_menu' => 'required',
             'title' => 'required|max:255',
-            // 'image' => 'required',
             'content' => 'required',
             'source' => 'required',
             'desc' => 'required|max:255'
@@ -50,11 +60,8 @@ class NewsController extends Controller
         ];
 
         $messages = [
-            // 'user_id.required' => 'Editor harus diisi',
-            // 'tag_id.required' => 'Tag harus diisi',
-            // 'menu_id.required' => 'Menu harus diisi',
+            'id_menu.required' => 'Menu harus diisi',
             'title.max' => 'Judul terlalu panjang ',
-            // 'image.required' => 'Gambar harus diisi',
             'content.required' => 'Content harus diisi',
             'source.required' => 'URL harus diisi',
             'desc.max' => 'Deskripsi terlalu panjang'
@@ -62,12 +69,24 @@ class NewsController extends Controller
 
         $this->validate($request, $rules, $messages);
 
+         // ubah nama gambar
+         $file = $request->image;
+         $newName = time() . rand(100, 999) . "." . $file->getClientOriginalExtension();
+ 
 
         $news = new News;
+        $news->user_id = Auth::id();
         $news->title = $request->title;
+        $news->image = $newName;
+        $file->move(public_path() . '/storage/img/news', $newName);
         $news->content = $request->content;
         $news->source = $request->source;
+        $news->id_menu = $request->id_menu;
         $news->desc = $request->desc;
+        $user = new User;
+        $user = User::find(Auth::id());
+        $user = User::where('id', Auth::id())->update(['total' => $user->total+1]);
+        
 
         // dd($news);
     
@@ -96,8 +115,12 @@ class NewsController extends Controller
     public function edit($id)
     {
         $news = News::findorfail($id);
+        $menus = Menu::all();
+        $tags = Tag::all();
 
-        return view('admin.berita.edit')->with('news', $news);
+        return view('admin.berita.edit')->with('news', $news)
+        ->with('menus', $menus)
+        ->with('tags', $tags);
     }
 
     /**
@@ -110,11 +133,7 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            // 'user_id' => 'required',
-            // 'tag_id' => 'required',
-            // 'menu_id' => 'required',
             'title' => 'required|max:255',
-            // 'image' => 'required',
             'content' => 'required',
             'source' => 'required',
             'desc' => 'required|max:255'
@@ -122,11 +141,7 @@ class NewsController extends Controller
         ];
 
         $messages = [
-            // 'user_id.required' => 'Editor harus diisi',
-            // 'tag_id.required' => 'Tag harus diisi',
-            // 'menu_id.required' => 'Menu harus diisi',
             'title.max' => 'Judul terlalu panjang ',
-            // 'image.required' => 'Gambar harus diisi',
             'content.required' => 'Content harus diisi',
             'source.required' => 'URL harus diisi',
             'desc.max' => 'Deskripsi terlalu panjang'
@@ -134,16 +149,32 @@ class NewsController extends Controller
 
         $this->validate($request, $rules, $messages);
 
-
+        // Cek apakah gambar diupdate
+       
         $news = News::find($id);
         $news->title = $request->title;
         $news->content = $request->content;
+        $news->id_menu = $request->id_menu;
         $news->source = $request->source;
         $news->desc = $request->desc;
 
+
+        if($image = $request->file('image')) {
+            $destinationPath = 'storage/img/news/';
+            $profileImage = date('YmdHis')."." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+    
+            $news->image = $profileImage;
+            }else{
+                unset($news['image']);
+            }
+
+
+
         // dd($news);
     
-         $news->save();
+         $news->update();
 
         return redirect('admin/news')->with('status', 'News Update!');
     }
@@ -156,7 +187,12 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
+        
+        $user = new User;
+        $user = User::find(Auth::id());
+        $user = User::where('id', Auth::id())->update(['total' => $user->total-1]);
         News::find($id)->delete();
+
         return back()->with('status', 'News deleted!');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ImageAdvertisement;
+use App\Models\Position;
 
 class ImageAdvertisementController extends Controller
 {
@@ -15,8 +16,11 @@ class ImageAdvertisementController extends Controller
      */
     public function index()
     {
-        $image_advertisement = ImageAdvertisement::all();
-        return view ('admin.iklan-gambar.index')->with('image_advertisement', $image_advertisement);;
+        $image_advertisement = ImageAdvertisement::with('posisi')
+            ->latest()
+            ->paginate(5);
+
+        return view ('admin.iklan-gambar.index')->with('image_advertisement', $image_advertisement);
     }
 
     /**
@@ -26,7 +30,11 @@ class ImageAdvertisementController extends Controller
      */
     public function create()
     {
-        return view ('admin.iklan-gambar.create');
+        $image_advertisement = ImageAdvertisement::all();
+        $posisi = Position::all();
+        return view ('admin.iklan-gambar.create')
+
+        ->with('posisi', $posisi);
     }
 
     /**
@@ -39,14 +47,14 @@ class ImageAdvertisementController extends Controller
     {
         $rules = [
             'title' => 'required|max:225',
-            'posisi' => 'required|max:50',
+            'id_posisi' => 'required|max:50',
             'image' => 'required|image|max:5024',
            
         ];
 
         $messages = [
             'title.required' => 'Judul harus diisi',
-            'posisi.required' => 'Posisi harus diisi',
+            'id_posisi.required' => 'Posisi harus diisi',
             'image.required' => 'Gambar harus diisi',
             
         ];
@@ -59,7 +67,7 @@ class ImageAdvertisementController extends Controller
 
         $image_advertisement = new ImageAdvertisement;
         $image_advertisement->title = $request->title;
-        $image_advertisement->posisi = $request->posisi;
+        $image_advertisement->id_posisi = $request->id_posisi;
         $image_advertisement->image = $newName;
         $file->move(public_path() . '/storage/img/iklan-gambar', $newName);
         // $line_advertisement->user_id = $request->user_id;
@@ -92,8 +100,10 @@ class ImageAdvertisementController extends Controller
     public function edit($id)
     {
         $image_advertisement = ImageAdvertisement::findorfail($id);
+        $posisi = Position::all();
 
-        return view('admin.iklan-gambar.edit')->with('image_advertisement', $image_advertisement);
+        return view('admin.iklan-gambar.edit')->with('image_advertisement', $image_advertisement)
+        ->with('posisi', $posisi);
     }
 
     /**
@@ -107,35 +117,35 @@ class ImageAdvertisementController extends Controller
     {
         $rules = [
             'title' => 'required|max:225',
-            'posisi' => 'required|max:50',
-            'image' => 'required|image|max:5024',
+            'id_posisi' => 'required|max:50',
            
         ];
 
         $messages = [
             'title.required' => 'Judul harus diisi',
-            'posisi.required' => 'Posisi harus diisi',
-            'image.required' => 'Gambar harus diisi',            
+            'id_posisi.required' => 'Posisi harus diisi',          
         ];
 
         $this->validate($request, $rules, $messages);
 
-        // Cek apakah gambar diupdate
-        $getData = ImageAdvertisement::findorfail($id);
-        $image = $getData->image;
-        if ($request['image'] != null) {
-
-            $request->image->move(public_path() . '/storage/img/iklan-gambar', $image);
-        }
 
         $image_advertisement = ImageAdvertisement::find($id);
         $image_advertisement->title = $request->title;
-        $image_advertisement->posisi = $request->posisi;
-        $image_advertisement->image = $image;
-        // $line_advertisement->user_id = $request->user_id;
+        $image_advertisement->id_posisi = $request->id_posisi;
        
 
         // dd($news);
+      
+        if($image = $request->file('image')) {
+            $destinationPath = 'storage/img/iklan-gambar/';
+            $profileImage = date('YmdHis')."." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+    
+            $image_advertisement->image = $profileImage;
+            }else{
+                unset($image_advertisement['image']);
+            }
     
          $image_advertisement->save();
 

@@ -67,7 +67,8 @@
                                     <a href="#" class="dropdown-item">Sub Item 2</a>
                                 </div>
                             </div> -->
-                            <a href="l" class="nav-item nav-link">Sosial</a>
+                            
+                            <a href="" class="nav-item nav-link">Sosial</a>
                             <a href="" class="nav-item nav-link">Politik</a>
                             <a href="" class="nav-item nav-link">Hukum</a>
                             <a href="" class="nav-item nav-link">Ekonomi</a>
@@ -77,6 +78,9 @@
                             <a href="" class="nav-item nav-link">Gaya Hidup</a>
                             <a href="" class="nav-item nav-link">Bola</a>
                         </div>
+
+
+                        
                         <div class="social ml-auto">
                             <a href=""><i class="fab fa-twitter"></i></a>
                             <a href=""><i class="fab fa-facebook-f"></i></a>

@@ -8,7 +8,7 @@
         <meta content="Bootstrap News Template - Free HTML Templates" name="description">
 
         <!-- Favicon -->
-        <link href="member/img/favicon.ico" rel="icon">
+        <link href="member/img/LOGOCUP.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet"> 

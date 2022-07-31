@@ -1,13 +1,24 @@
 @extends('admin.app')
-@section('title','Kontak')
+@section('title','Pedoman')
 @section('content')
 
 <div class="w-full mt-6 pl-0 lg:pl-2">
     <p class="text-xl pb-6 flex items-center">
-        <i class="fas fa-list mr-3"></i> Kontak
+        <i class="fas fa-list mr-3"></i> Pedoman
     </p>
     <div class="leading-loose">
-        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="">
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+<!-- INGET ACTIONNYA STORE -->
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="{{route('admin.tentangkami.pedoman.store')}}">
             @csrf
             <!-- <p class="text-xl text-gray-800 font-semibold pb-4">Kontak</p> -->
 

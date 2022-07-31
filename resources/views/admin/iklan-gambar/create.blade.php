@@ -27,16 +27,15 @@
             </div>
           
             <div class="mt-2">
-                <label class="block text-sm text-gray-900" for="posisi">Posisi</label>
+                <label class="block text-sm text-gray-900" for="id_posisi">Posisi</label>
                 <div class="relative w-full py-1 text-gray-700 rounded">
                     <select id="posisi"
-                        class="block p-2 w-full bg-gray-200 appearance-none focus:outline-none {{ $errors->has('posisi') ? 'is-invalid' : '' }}" id="posisi" name="posisi" value="{{old('posisi')}}"
-                        name="posisi">
+                        class="block p-2 w-full bg-gray-200 appearance-none focus:outline-none {{ $errors->has('id_posisi') ? 'is-invalid' : '' }}" id="id_posisi" name="id_posisi" value="{{old('id_posisi')}}"
+                        name="id_posisi">
                         <option value="">Pilih Data</option>
-                        <option value="Atas">Atas</option>
-                        <option value="Bawah">Bawah</option>
-                        <option value="Kiri">Kiri</option>
-                        <option value="Kanan">Kanan</option>
+                        @foreach ($posisi as $data)
+                            <option value="{{$data->id}}">{{ $data->title }}</option>
+                        @endforeach
                     </select>
                     <div class="flex items-center pointer-events-none absolute inset-y-0 right-0 px-2 text-gray-700">
                         <i class="fas fa-chevron-down"></i>

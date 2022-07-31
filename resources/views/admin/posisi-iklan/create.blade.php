@@ -12,8 +12,8 @@
             <p class="text-xl text-gray-800 font-semibold pb-4">Tambah Posisi Iklan</p>
 
             <div class="mt-2">
-                <label class="block text-sm text-gray-900" for="sortir">Sortir</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="sortir" name="sortir" type="number" required="" max="20" min="1" placeholder="Insert NUmber" aria-label="Name">
+                <label class="block text-sm text-gray-900" for="title">Title</label>
+                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title" name="title" type="text" required="" max="20" min="1" placeholder="Insert Position" aria-label="Name">
             </div>  
 
             <div class="mt-2">

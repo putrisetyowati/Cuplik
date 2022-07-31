@@ -17,5 +17,15 @@ class DatabaseSeeder extends Seeder
 
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
+        // $this->call(KontakSeeder::class);
+        $this->call(MenuSeeder::class);
+        $this->call(NewsSeeder::class);
+        $this->call(PositionSeeder::class);
+        $this->call(SubTagSeeder::class);
+        $this->call(TagSeeder::class);
+        $this->call(DisclaimerSeeder::class);
+        $this->call(PedomanSeeder::class);
+        $this->call(RedaksiSeeder::class);
+        $this->call(ImageAdvertisementSeeder::class);
     }
 }

@@ -1,6 +1,6 @@
 @include('layout.member.header')
 <body>
-    @include('layout.member.navbar')
+    
     @yield('content')
 
     @include('layout.member.footer')

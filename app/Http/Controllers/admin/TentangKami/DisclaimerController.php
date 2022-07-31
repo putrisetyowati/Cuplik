@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin\TentangKami;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Disclaimer;
 
 class DisclaimerController extends Controller
 {
@@ -14,7 +15,7 @@ class DisclaimerController extends Controller
      */
     public function index()
     {
-        return view ('admin.disclaimer.index');
+       
     }
 
     /**
@@ -24,7 +25,8 @@ class DisclaimerController extends Controller
      */
     public function create()
     {
-        //
+     
+        return view ('admin.tentang-kami.disclaimer.create');
     }
 
     /**
@@ -35,7 +37,49 @@ class DisclaimerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+           'title' => 'required|max:255',
+            'date' => 'required',
+            'time' => 'required',
+            'content' => 'required'
+            
+        ];
+
+        $messages = [
+            'title.required' => 'Title harus diisi',
+            'title.max' => 'Judul terlalu panjang ',
+            'date.required' => 'Tanggal harus diisi',
+            'time.required' => 'Time harus diisi',
+            'content.required' => 'content harus diisi'
+        ];
+
+        $this->validate($request, $rules, $messages);
+
+         // ubah nama gambar
+
+        $disclaimer = new Disclaimer;
+        $disclaimer->title = $request->title;
+        $disclaimer->date = $request->date;
+        $disclaimer->time = $request->time;
+        $disclaimer->content = $request->content;
+
+        if($image = $request->file('image')) {
+            $destinationPath = 'storage/img/disclaimer/';
+            $profileImage = date('YmdHis')."." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+    
+            $disclaimer->image = $profileImage;
+            }else{
+                unset($disclaimer['image']);
+            }
+     
+
+        // dd($disclaimer);
+    
+         $disclaimer->save();
+
+        return redirect()->back()->with('status', 'Disclaimer created!');
     }
 
     /**
@@ -57,7 +101,9 @@ class DisclaimerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $disclaimer = Disclaimer::findorfail($id);
+        return view ('admin.tentang-kami.disclaimer.edit')
+        ->with('disclaimer', $disclaimer);
     }
 
     /**
@@ -69,7 +115,56 @@ class DisclaimerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+             'date' => 'required',
+             'time' => 'required',
+             'content' => 'required'
+             
+         ];
+ 
+         $messages = [
+             'title.required' => 'Title harus diisi',
+             'title.max' => 'Judul terlalu panjang ',
+             'date.required' => 'Tanggal harus diisi',
+             'time.required' => 'Time harus diisi',
+             'content.required' => 'Content harus diisi'
+         ];
+
+
+         
+ 
+         $this->validate($request, $rules, $messages);
+ 
+          // ubah nama gambar
+        //   $file = $request->image;
+        //   $newName = time() . rand(100, 999) . "." . $file->getClientOriginalExtension();
+  
+ 
+         $disclaimer = Disclaimer::find($id);
+         $disclaimer->title = $request->title;
+         $disclaimer->date = $request->date;
+         $disclaimer->time = $request->time;
+         $disclaimer->content = $request->content;
+ 
+
+         if($image = $request->file('image')) {
+            $destinationPath = 'storage/img/disclaimer/';
+            $profileImage = date('YmdHis')."." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+    
+            $disclaimer->image = $profileImage;
+            }else{
+                unset($disclaimer['image']);
+            }
+
+            
+         // dd($news);
+     
+          $disclaimer->save();
+ 
+          return redirect()->back()->with('status', 'Disclaimer created!');
     }
 
     /**

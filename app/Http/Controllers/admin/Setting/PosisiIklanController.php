@@ -40,14 +40,14 @@ class PosisiIklanController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'sortir' => 'required',
+            'title' => 'required',
             'lebar' => 'required|numeric',
             'tinggi' => 'required|numeric',
             'is_active' => 'required',
         ];
 
         $messages = [
-            'sortir.required' => 'Sortir harus diisi',
+            'title.required' => 'title harus diisi',
             'lebar.required' => 'Lebar harus diisi',
             'lebar.numeric' => 'Lebar harus numerik',            
             'tinggi.required' => 'Tinggi harus diisi',
@@ -59,7 +59,7 @@ class PosisiIklanController extends Controller
 
 
         $position = new Position;
-        $position->sortir = $request->sortir;
+        $position->title = $request->title;
         $position->lebar = $request->lebar;
         $position->tinggi = $request->tinggi;
         $position->is_active = $request->is_active;

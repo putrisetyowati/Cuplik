@@ -15,8 +15,8 @@ class CreateImageAdvertisementsTable extends Migration
     {
         Schema::create('image_advertisements', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('id_posisi');
             $table->string('title');
-            $table->string('posisi');
             $table->text('image');
             $table->timestamps();
         });

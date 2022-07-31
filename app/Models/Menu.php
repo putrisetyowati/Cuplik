@@ -16,4 +16,10 @@ class Menu extends Model
     {
         return $this->hasMany(SubTag::class);
     }
+
+
+    public function news()
+    {
+        return $this->hasMany(News::class);
+    }
 }

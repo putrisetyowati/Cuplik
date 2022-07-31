@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin\TentangKami;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\TentangKami;
 
 class TentangKamiController extends Controller
 {
@@ -14,9 +15,8 @@ class TentangKamiController extends Controller
      */
     public function index()
     {
-        return view ('admin.tentang-kami.index');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +24,7 @@ class TentangKamiController extends Controller
      */
     public function create()
     {
-        //
+        return view ('admin.tentang-kami.tentang-kami.create');
     }
 
     /**

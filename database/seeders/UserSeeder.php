@@ -15,30 +15,51 @@ class UserSeeder extends Seeder
     public function run()
     {
         $editor = User::create([
-            'name' => 'Editor Role',
-            'username' => 'putri',
+            'username' => 'Putri',
+            'initial' => 'ptr',
+            'tmpt_lhr' => 'Cirebon',
+            'tgl_lhr' => '2001-09-20',
+            'phone' => '08988885881',
+            'almt_domisili' => 'Cikarang',
+            'pendidikan' => 'D3',
+            'image' => 'foto.jpg',
+            'total' => '1',
             'email' => 'editor@gmail.com',
             'password' => bcrypt('password'),
         ]);
 
         $editor->assignRole('Editor');
 
-        $member = User::create([
-            'name' => 'Member Role',
-            'username' => 'setyowati',
-            'email' => 'member@gmail.com',
+        $editor2 = User::create([
+            'username' => 'Bagol',
+            'initial' => 'bgl',
+            'tmpt_lhr' => 'Toang',
+            'tgl_lhr' => '2001-09-20',
+            'phone' => '08988885881',
+            'almt_domisili' => 'Cikarang',
+            'pendidikan' => 'D3',
+            'image' => 'foto.jpg',
+            'total' => '1',
+            'email' => 'editorbagol@gmail.com',
             'password' => bcrypt('password'),
         ]);
 
-        $member->assignRole('Member');
+        $editor2->assignRole('Editor');
 
-        $reporter = User::create([
-            'name' => 'Reporter Role',
-            'username' => 'scarlet',
-            'email' => 'reporter@gmail.com',
+        $admin = User::create([
+            'username' => 'Scarlet',
+            'initial' => 'scr',
+            'tmpt_lhr' => 'Manokwari',
+            'tgl_lhr' => '2002-09-20',
+            'phone' => '08988885882',
+            'almt_domisili' => 'Indramayu',
+            'pendidikan' => 'D3',
+            'image' => 'foto.jpg',
+            'total' => '1',
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
         ]);
 
-        $reporter->assignRole('Reporter');
+        $admin->assignRole('admin');
     }
 }

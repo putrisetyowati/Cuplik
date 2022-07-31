@@ -32,11 +32,11 @@
                                 @foreach ($image_advertisement as $data)
                                 <tr>
                                     <td class="text-left py-3 px-4">{{$i++}}</td>
-                                    <td class="text-left py-3 px-4">{{ $data->posisi }}</td>
+                                    <td class="text-left py-3 px-4">{{ $data->posisi->title }}</td>
                                     <td class="text-left py-3 px-4">{{ $data->title }}</td>
                                     <td class="text-left py-3 px-4">
                                         @if ($data->image)
-                                        <img class="w-56 h-20 object-cover object-center" src="{{ asset('storage/img/iklan-gambar' . $data->image) }}"
+                                        <img class="w-56 h-20 object-cover object-center" src="{{ asset('storage/img/iklan-gambar/' . $data->image) }}"
                                             alt="banner">
                                         @else
                                         <img class="w-56 h-20 object-cover object-center" src="{{ asset('img/no-image.png') }}"

@@ -7,13 +7,14 @@
         <i class="fas fa-list mr-3"></i> Tambah Data
     </p>
     <div class="leading-loose">
-        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="{{route('admin.setting.tag-sub.store')}}">
+        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="{{route('admin.setting.tag-sub.update', $tagsub->id)}}">
+        @method('PUT') 
             @csrf
             <p class="text-xl text-gray-800 font-semibold pb-4">Tambah Tag Sub</p>
 
             <div class="mt-2">
                 <label class="block text-sm text-gray-900" for="short">Sortir</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="short" name="short" type="number" required="" placeholder="" aria-label="Name" value="{{old('short', $tagsub->name)}}>
+                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="short" name="short" type="number" required="" placeholder="" aria-label="Name" value="{{old('short', $tagsub->short)}}">
             </div>  
 
             <div class="mt-2">
