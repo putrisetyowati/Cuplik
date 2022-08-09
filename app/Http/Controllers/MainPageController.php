@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\News;
+use App\Models\SubTag;
 use App\Models\Menu;
+use App\Models\News;
 use App\Models\ImageAdvertisement;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
-class DashboardController extends Controller
+class MainPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,20 +19,33 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        $news = News::all()->count();
-        $menu = Menu::all()->count();
-        $editor = User::all()->count();
-        $iklan = ImageAdvertisement::all()->count();
-        
-       
-        // dd($user);
-        return view('admin.dashboard.index')
-            ->with('user', $user)
-            ->with('editor', $editor)
-            ->with('news', $news)
-            ->with('iklan', $iklan)
-            ->with('menu', $menu);
+        $tagsub = SubTag::with('menu')
+        ->with('tag')
+        ->latest()
+        ->paginate(5);
+
+    $menu = Menu::all();
+
+    $popular = News::All()->random(2);
+
+    $iklan_gambar = ImageAdvertisement::All();
+
+    $news = DB::table('news')->join('menus', 'news.id_menu', '=', 'menus.id')
+    ->get();
+    $title= DB::table('news')->select("title")->get();
+    $array= [
+        $title
+    ];
+    // $coba = Str::limit($array, 20);
+    // $news->title = Str::limit($news->title, 50);
+
+    // dd($coba);
+    return view('member.main.index')
+         ->with('tagsub', $tagsub)
+         ->with('menu', $menu)
+         ->with('news', $news)
+         ->with('popular', $popular)
+         ->with('iklan_gambar', $iklan_gambar);
     }
 
     /**
@@ -63,7 +77,24 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        //
+        $menu = Menu::findorfail($id);
+        // $news = DB::table('news')->join('menus', 'news.id_menu', '=', 'menus.id')
+        // ->get();
+        $news = News::all();
+        
+
+        $tagsub = SubTag::with('menu')
+        ->with('tag')
+        ->latest()
+        ->paginate(5);
+
+        $menus = Menu::all();
+
+        return view('member.main.show')
+        ->with('tagsub', $tagsub)
+        ->with('menu', $menu)
+        ->with('menus', $menus)
+        ->with('news', $news);
     }
 
     /**

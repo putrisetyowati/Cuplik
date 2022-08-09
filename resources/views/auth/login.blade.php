@@ -58,9 +58,7 @@
                     {{ __('Login') }}
                     </button>
                 </form>
-                <div class="text-center pt-12 pb-12">
-                    <p>Don't have an account? <a href="{{route('register')}}" class="underline font-semibold">Register here.</a></p>
-                </div>
+                
             </div>
 
         </div>

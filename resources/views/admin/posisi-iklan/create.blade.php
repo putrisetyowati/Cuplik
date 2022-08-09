@@ -50,7 +50,7 @@
 
             <div class="mt-6">
                 <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Tambah</button>
-                <a href="{{route('admin.setting.posisi-iklan.index')}}" class="px-4 py-1 text-white font-light tracking-wider bg-red-700 rounded">Batal</a>
+                <a href="#" class="px-4 py-1 text-white font-light tracking-wider bg-red-700 rounded">Batal</a>
             </div>
 
            

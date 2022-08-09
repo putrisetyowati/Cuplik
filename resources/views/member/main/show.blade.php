@@ -33,7 +33,7 @@
                     <div class="col-lg-3 col-md-4">
                         <div class="b-logo">
                             <a href="">
-                                <img src="member/img/putih_cuplik_2011_fix.jpg" alt="Logo">
+                                <img src="{{ asset('member/img/putih_cuplik_2011_fix.jpg') }}" alt="Logo">
                             </a>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="navbar-nav mr-auto">
                             <a href="" class="nav-item nav-link active">Home</a>
                             
-                            @foreach ($menu as $data)
+                            @foreach ($menus as $data)
                             <a href="{{ url('/menu')}}/{{ $data->id }}" class="nav-item nav-link">{{$data->name}}</a>
                                 
                             @endforeach
@@ -121,75 +121,40 @@
                 </div>
             </div>
         </div>
-        <!-- Top News End-->
+       
+<br>
+<br>
 
-        <!-- Category News Start-->
-        <div class="cat-news">
+  <!-- Tab News Start-->
+  <div class="tab-news">
             <div class="container">
                 <div class="row">
-
-
-                    <div class="col-lg-6">
-                    
-                    
-                        <h2>Sosial</h2>
-                        <div class="row cn-slider">
-                            @foreach ( $news as $data)
-                            @if ($data->id_menu=='1')
-                                <div class="col-lg-6">
-                                    <div class="cn-img">
-                                        <img src="{{asset('storage/img/news/'. $data->image)}}" width="260" height="160"/>
-                                        <div class="cn-title">
-                                            <a href="" maxleng style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{$data->title}}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                            @endforeach
-                        </div>
-                                    
-                    
-                        <h2>Politik</h2>
-                        <div class="row cn-slider">
-                            @foreach ( $news as $data)
-                                @if ($data->id_menu=='2')
-                        
-                                    <div class="col-lg-6">
-                                        <div class="cn-img">
-                                            <img src="{{asset('storage/img/news/'. $data->image)}}" width="260" height="160"/>
-                                            <div class="cn-title">
-                                                <a href="">{{$data->title}}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div> 
-                        
-                        
-                    </div>
-
-                    @foreach ($iklan_gambar as $data)
-                    <div class="col-lg-6">
-                        
+                    <div class="col-md-12">
                         <div class="tab-content">
                             <div id="featured" class="container tab-pane active">
-                               
-                               <div class="img">
-                                   <img src="{{asset('storage/img/iklan-gambar/'. $data->image)}}" width="500" height="450" />
-                               </div>
-                                   
-                               
+                                @foreach ($news as $data)  
+                                @if ($data->id_menu == $menu->id)                
+                                <div class="tn-news">
+            
+                                <div class="tn-img">
+                                    <img src="{{asset('storage/img/news/'. $data->image)}}" />
+                                </div>
+                                <div class="tn-title">
+                                    <a href="{{ url('/news')}}/{{ $data->id }}">{{$data->title}}</a>
+                                </div>
+                            </div>
+                            @endif      
+                            @endforeach
+
+
                             </div>                           
                         </div>
                     </div>
-                    @endforeach
                 </div>
             </div>
         </div>
-        <!-- Category News End-->
-<br>
-<br>
+        <!-- Tab News Start-->
+
 
 <!-- image advertisement start -->
 <!-- <div class="tab-news">
@@ -208,37 +173,7 @@
        
         
         <!-- Tab News Start-->
-        <div class="tab-news">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-12">
-                        <ul class="nav nav-pills nav-justified">                           
-                            <li class="nav-item">
-                                <a class="nav-link">Popular News</a>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div id="featured" class="container tab-pane active">
-                                @foreach ($popular as $data )
-                                <div class="tn-news">
-                                    <div class="tn-img">
-                                        <img src="{{asset('storage/img/news/'. $data->image)}}" />
-                                    </div>
-                                    <div class="tn-title">
-                                        <a href="">{{$data->title}}</a>
-                                    </div>
-                                </div> 
-                                @endforeach
-                            </div>                           
-                        </div>
-                        
-                    </div>
-                                       
-                </div>
-            </div>
-        </div>
+     
         <!-- Tab News Start-->
 
         <!-- Main News Start-->

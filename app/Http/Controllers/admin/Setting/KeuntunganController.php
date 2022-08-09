@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin\Setting;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\News;
-use App\Models\Menu;
-use App\Models\ImageAdvertisement;
+use App\Models\Keuntungan; 
 
-class DashboardController extends Controller
+class KeuntunganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,20 +15,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        $news = News::all()->count();
-        $menu = Menu::all()->count();
-        $editor = User::all()->count();
-        $iklan = ImageAdvertisement::all()->count();
-        
-       
-        // dd($user);
-        return view('admin.dashboard.index')
-            ->with('user', $user)
-            ->with('editor', $editor)
-            ->with('news', $news)
-            ->with('iklan', $iklan)
-            ->with('menu', $menu);
+        $keuntungans = Keuntungan::all();
+
+        return view ('admin.keuntungan.index')    
+            ->with('keuntungans', $keuntungans);
     }
 
     /**
@@ -41,7 +28,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view ('admin.keuntungan.create');
     }
 
     /**

@@ -30,7 +30,7 @@
                         
             <div class="mt-2 w-full">
                 <label class="block text-sm text-gray-900" for="image">Gambar</label>
-                <img src=" {{asset('storage/img/redaksi/'. $redaksi->image)}}" alt="Image" class="avatar-img rounded-circle">
+                <img src=" {{asset('storage/img/redaksi/'. $redaksi->image)}}" alt="Image" class="avatar-img rounded-circle" width="250" height="150">
                 <input class="form-control block w-full px-3 py-1.5 text-base font-normal {{ $errors->has('image') ? 'is-invalid' : '' }} text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="image" name="image" value="{{old('image', $redaksi->image)}}">
                 @if($errors->has('image'))
                     <div class="text-red-600">{{$errors->first('image')}}</div>

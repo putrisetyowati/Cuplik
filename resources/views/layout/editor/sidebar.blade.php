@@ -1,7 +1,5 @@
 <aside class="relative bg-gray-700 h-screen w-64 hidden sm:block shadow-xl">
-        <!-- <div class="p-6">
-            <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">editor</a>
-        </div> -->
+        
         <div class="w-60">
             <img src="{{asset('admin/assets/images/putih_cuplik_2011_fix.jpg')}}" width="400" alt="">
         </div>
@@ -36,10 +34,6 @@
                 <i class="fas fa-newspaper mr-3"></i>
                 Berita
             </a>
-            <a href="{{route('editor.covid-19.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-certificate mr-3"></i>
-                Covid-19
-            </a>
             <a href="{{route('editor.iklan-baris.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
                 <i class="fas fa-bookmark mr-3"></i>
                 Iklan Baris
@@ -47,19 +41,17 @@
             <a href="{{route('editor.iklan-gambar.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
                 <i class="fas fa-flag mr-3"></i>
                 Iklan Gambar
-            </a> 
-            <a href="{{route('editor.video.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-play mr-3"></i>
-                Video
-            </a>
-            <a href="{{route('editor.poling.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-users mr-3"></i>
-                Poling
-            </a>                       
-            <a href="{{route('editor.curhat-rakyat.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-comment mr-3"></i>
-                Curhat Rakyat
-            </a>
+            </a>                      
+          
+            <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
+
+            </div>
+            <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
+
+            </div>
+            <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
+
+            </div>
             <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
 
             </div>

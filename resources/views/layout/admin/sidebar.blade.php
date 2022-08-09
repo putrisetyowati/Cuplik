@@ -1,7 +1,5 @@
 <aside class="relative bg-gray-700 h-full w-64 hidden sm:block shadow-xl">
-        <!-- <div class="p-6">
-            <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
-        </div> -->
+        
         <div class="w-60">
             <img src="{{asset('admin/assets/images/putih_cuplik_2011_fix.jpg')}}" width="400" alt="">
         </div>
@@ -18,8 +16,8 @@
                     <li> <a href="{{route('admin.setting.menu.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('admin/setting/menu*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }} "> <i class="fas fas fa-thumbtack mr-3"></i>Menu</a></li>
                     <li> <a href="{{route('admin.setting.tag.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('admin/setting/tag*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"> <i class="fas fa-thumbtack mr-3"></i>Tag</a></li>
                     <li> <a href="{{route('admin.setting.tag-sub.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('admin/setting/tag-sub*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"> <i class="fas fa-thumbtack mr-3"></i>Tag Jadi Sub</a></li>
-                    <li> <a href="{{route('admin.setting.posisi-iklan.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('admin/setting/posisi-iklan*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"> <i class="fas fa-thumbtack mr-3"></i>Posisi Iklan</a></li>
                     <li> <a href="{{route('admin.setting.register.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('admin/setting/register*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"><i class="fas fa-thumbtack mr-3"></i>Editor</a></li>
+                    <li> <a href="{{route('admin.setting.keuntungan.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('admin/setting/register*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"><i class="fas fa-thumbtack mr-3"></i>Keuntungan</a></li>
                     <li> <a href="{{route('admin.setting.member.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('admin/setting/member*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"> <i class="fas fa-thumbtack mr-3"></i>Member</a></li>
                 </ul>        
             </div>
@@ -80,10 +78,6 @@
                 <i class="fas fa-newspaper mr-3"></i>
                 Berita
             </a>
-            <a href="{{route('admin.covid-19.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-certificate mr-3"></i>
-                Covid-19
-            </a>
             <a href="{{route('admin.iklan-baris.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
                 <i class="fas fa-bookmark mr-3"></i>
                 Iklan Baris
@@ -91,19 +85,32 @@
             <a href="{{route('admin.iklan-gambar.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
                 <i class="fas fa-flag mr-3"></i>
                 Iklan Gambar
+            </a>   
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
             </a> 
-            <a href="{{route('admin.video.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-play mr-3"></i>
-                Video
-            </a>
-            <a href="{{route('admin.poling.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-users mr-3"></i>
-                Poling
-            </a>                       
-            <a href="{{route('admin.curhat-rakyat.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
-                <i class="fas fa-comment mr-3"></i>
-                Curhat Rakyat
-            </a>
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
+            </a>   
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
+            </a>     
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
+            </a>     
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
+            </a>     
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
+            </a>     
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
+            </a>     
+            <a href="{{route('admin.news.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
+                             
+            </a>                      
+
             
             <!-- <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
                 <i class="fas fa-bullhorn mr-3"></i>

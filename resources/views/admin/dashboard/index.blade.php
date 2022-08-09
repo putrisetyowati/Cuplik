@@ -12,7 +12,7 @@
                         <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
                             <div class="my-auto">
                                 <p class="font-bold text-xl">BERITA</p>
-                                <p class="text-lg">{{$news}}</p>
+                                <p class="text-lg">30</p>
                             </div>
                             <div class="my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,18 +97,39 @@
                                                 <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Username</th>
                                                 <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Jumlah Upload</th>
                                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bulan</th>
+                                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Pendapatan</th>
                                             </tr>
                                         </thead>
                                         <tbody class="text-gray-700">
+
+                                        <tr>
+                                                <td class="w-1/3 text-left py-3 px-4">Siti</td>
+                                                <td class="w-1/3 text-left py-3 px-4">10</td>
+                                                <td class="w-1/3 text-left py-3 px-4">Agustus</td>
+                                                <td class="w-1/3 text-left py-3 px-4">Rp 1000000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w-1/3 text-left py-3 px-4">Adi</td>
+                                                <td class="w-1/3 text-left py-3 px-4">15</td>
+                                                <td class="w-1/3 text-left py-3 px-4">Agustus</td>
+                                                <td class="w-1/3 text-left py-3 px-4">Rp 1500000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w-1/3 text-left py-3 px-4">Gino</td>
+                                                <td class="w-1/3 text-left py-3 px-4">5</td>
+                                                <td class="w-1/3 text-left py-3 px-4">Agustus</td>                                                
+                                                <td class="w-1/3 text-left py-3 px-4">Rp 500000</td>
+                                            </tr>
+
                                             @foreach ($user as $data)
                                             <tr>
                                                 <td class="w-1/3 text-left py-3 px-4">{{$data->username}}</td>
                                                 <td class="w-1/3 text-left py-3 px-4">{{$data->total}}</td>
-                                                <td class="w-1/3 text-left py-3 px-4">10</td>
+                                                <td class="w-1/3 text-left py-3 px-4">Agustus</td>
                                             </tr>
                                                 
                                             @endforeach
-                                          
+                     
                                         </tbody>
                                     </table>
                                 </div>

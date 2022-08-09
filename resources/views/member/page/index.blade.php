@@ -31,8 +31,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4">
                         <div class="b-logo">
-                            <a href="index.html">
-                                <img src="member/img/putih_cuplik_2011_fix.jpg" alt="Logo">
+                            <a href="">
+                                <img src="{{ asset('member/img/putih_cuplik_2011_fix.jpg') }}" alt="Logo">
                             </a>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="" class="nav-item nav-link active">Home</a>
                             
                             @foreach ($menu as $data)
                             <a href="{{ url('menu')}}/{{ $data->id }}" class="nav-item nav-link">{{$data->name}}</a>
@@ -92,21 +92,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        @foreach ($news as $data)
+           
                         <div class="sn-container">
                             <div class="sn-img">
-                                <img src="{{asset('storage/img/news/'. $data->image)}}" />
+                                <img src="{{asset('storage/img/news/'. $news->image)}}" />
                             </div>
                             <div class="sn-content">
-                                <h1 class="sn-title">{{$data->title}}</h1>
+                                <h1 class="sn-title">{{$news->title}}</h1>
                                 <p>
-                                {{$data->content}}
+                                {{$news->content}}
                                 </p>
                                 
                             </div>
                         </div>
-                
-                        @endforeach
+         
 
                     </div>
 
@@ -123,7 +122,7 @@
 
                                     <div class="tab-content">
                                         <div id="featured" class="container tab-pane active">
-                                            @foreach ($iklan_gambar as $data)
+                                            @foreach ($iklan as $data)
                                             <div class="tn-news">
                                                 <div class="img">
                                                     <img src="{{asset('storage/img/iklan-gambar/'. $data->image)}}" width="350" height="350"/>

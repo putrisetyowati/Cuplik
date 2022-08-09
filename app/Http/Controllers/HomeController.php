@@ -8,6 +8,7 @@ use App\Models\Menu;
 use App\Models\News;
 use App\Models\ImageAdvertisement;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 class HomeController extends Controller
 {
     /**
@@ -15,10 +16,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -42,9 +43,14 @@ class HomeController extends Controller
 
         $news = DB::table('news')->join('menus', 'news.id_menu', '=', 'menus.id')
         ->get();
+        $title= DB::table('news')->select("title")->get();
+        $array= [
+            $title
+        ];
+        // $coba = Str::limit($array, 20);
+        // $news->title = Str::limit($news->title, 50);
 
-
-        // dd($news);
+        // dd($coba);
         return view('member.main.index')
              ->with('tagsub', $tagsub)
              ->with('menu', $menu)
@@ -53,10 +59,18 @@ class HomeController extends Controller
              ->with('iklan_gambar', $iklan_gambar);
      }
 
+     public function show($id)
+     {
+        $menu = Menu::findorfail($id);
+
+        return view('member.main.show');
+     }
+
      public function tagsub($id)
      {
+        $menu = Menu::findorfail($id);
         
-        return view('member.menu.index');
+        return view('member.main.show');
      }
 
 

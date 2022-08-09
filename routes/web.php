@@ -19,15 +19,22 @@ use App\Http\Controllers\HomeController;
 //     return view('coba');
 // });
 
+Route::resource('menu', MainPageController::class);
+Route::resource('news', NewsPageController::class);
+
+Route::get('/',[homeController::class, 'home'])->name('home');
+Route::get('/menu', [homeController::class, 'show'])->name('show');
+// Route::get('/home',[homeController::class, 'home'])->name('index');
+Route::get('/tagsub/{id}',[homeController::class, 'tagsub'])->name('tagsub');
+Route::get('/page',[homeController::class, 'page'])->name('page');
+Route::get('coba', function () {
+    return view('member.iptek.index');
+});
 Auth::routes();
 // Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
-Route::get('/',[homeController::class, 'home'])->name('home');
-// Route::get('/home',[homeController::class, 'home'])->name('index');
-Route::get('/tagsub/{id}',[homeController::class, 'tagsub'])->name('tagsub');
-Route::get('/page',[homeController::class, 'page'])->name('page');
 
 Route::group([
     'prefix' => 'admin',
@@ -42,7 +49,7 @@ Route::group([
         Route::resource('iklan-baris', LineAdvertisementController::class);
         Route::resource('iklan-gambar', ImageAdvertisementController::class);
         Route::resource('poling', PolingController::class);
-        Route::resource('video', VideoController::class);
+
 
         Route::group([
             'prefix' => 'setting',
@@ -51,10 +58,10 @@ Route::group([
         ], function(){
             Route::resource('menu', MenuController::class);
             Route::resource('tag', TagController::class);
-            Route::resource('posisi-iklan', PosisiIklanController::class);
             Route::resource('tag-sub', TagSubController::class);
             Route::resource('register', RegisterController::class);
             Route::resource('member', MemberController::class);
+            Route::resource('keuntungan', KeuntunganController::class);
         });
 
         Route::group([
@@ -86,7 +93,6 @@ Route::group([
         Route::resource('iklan-baris', LineAdvertisementController::class);
         Route::resource('iklan-gambar', ImageAdvertisementController::class);
         Route::resource('poling', PolingController::class);
-        Route::resource('video', VideoController::class);
 
         Route::group([
             'prefix' => 'setting',
@@ -96,7 +102,6 @@ Route::group([
             Route::resource('menu', MenuController::class);
             Route::resource('tag', TagController::class);
             Route::resource('register', RegisterController::class);
-            Route::resource('posisi-iklan', PosisiIklanController::class);
             Route::resource('tag-sub', TagSubController::class);
             Route::resource('member', MemberController::class);
         });

@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\News;
+use App\Models\SubTag;
 use App\Models\Menu;
+use App\Models\News;
 use App\Models\ImageAdvertisement;
 
-class DashboardController extends Controller
+class NewsPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,20 +17,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        $news = News::all()->count();
-        $menu = Menu::all()->count();
-        $editor = User::all()->count();
-        $iklan = ImageAdvertisement::all()->count();
-        
-       
-        // dd($user);
-        return view('admin.dashboard.index')
-            ->with('user', $user)
-            ->with('editor', $editor)
-            ->with('news', $news)
-            ->with('iklan', $iklan)
-            ->with('menu', $menu);
+        //
     }
 
     /**
@@ -63,7 +49,20 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        //
+        $news = News::findorfail($id);
+        $tagsub = SubTag::with('menu')
+        ->with('tag')
+        ->latest()
+        ->paginate(5);
+        $menu = Menu::all();
+
+        $iklan = ImageAdvertisement::All();
+
+        return view('member.page.index')
+        ->with('news', $news)
+        ->with('menu', $menu)
+        ->with('iklan', $iklan)
+        ->with('tagsub', $tagsub);
     }
 
     /**

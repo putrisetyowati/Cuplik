@@ -8,9 +8,7 @@
             <i class="fas fa-list mr-3"></i> Editor
             </p>
         </div>
-        <div class="col-span-2 place-self-end">
-            <a href="{{route('editor.setting.register.create')}}" class="rounded bg-cyan-500 hover:bg-cyan-700 py-2 px-4 text-white transition duration-300 font-semibold">+ Tambah Data</a>
-        </div>
+        
     </div>
 
     <div class="bg-white overflow-auto">
