@@ -1,4 +1,4 @@
-@extends('admin.app')
+@extends('editor.app')
 @section('title','Tambah Keuntungan')
 @section('content')
 
@@ -7,7 +7,7 @@
         <i class="fas fa-list mr-3"></i> Tambah Data
     </p>
     <div class="leading-loose">
-        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="{{route('admin.setting.keuntungan.store')}}">
+        <form class="p-10 bg-white rounded shadow-xl" method="POST" action="{{route('editor.setting.keuntungan.store')}}">
             
             @csrf
             <p class="text-xl text-gray-800 font-semibold pb-4">Tambah Keuntungan</p>
@@ -54,7 +54,7 @@
 
             <div class="mt-6">
                 <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Tambah</button>
-                <a href="{{route('admin.setting.keuntungan.index')}}" class="px-4 py-1 text-white font-light tracking-wider bg-red-700 rounded">Batal</a>
+                <a href="{{route('editor.setting.keuntungan.index')}}" class="px-4 py-1 text-white font-light tracking-wider bg-red-700 rounded">Batal</a>
             </div>
 
            

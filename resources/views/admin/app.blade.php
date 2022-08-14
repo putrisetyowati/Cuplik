@@ -3,12 +3,12 @@
     <body class="bg-gray-100 font-family-karla flex">
         @include('layout.admin.sidebar')
 
-        <div class="w-full flex flex-col h-screen overflow-y-hidden">
+        <div class="w-full flex flex-col h-screen overflow-y-hidden" style="margin-left: 16rem";>
             @include ('layout.admin.navbar')
 
             @include ('layout.admin.sidebarMobile')
-            <div class="w-full overflow-x-hidden border-t flex flex-col">
-                <main class="w-full flex-grow p-6">
+            <div class="w-full overflow-x-hidden border-t flex flex-col flex-grow">
+                <main class="w-full flex-grow p-6 mb-6">
                     @yield('content')
                 </main>
             </div>

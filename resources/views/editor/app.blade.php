@@ -3,11 +3,11 @@
     <body class="bg-gray-100 font-family-karla flex">
         @include('layout.editor.sidebar')
 
-        <div class="w-full flex flex-col h-screen overflow-y-hidden">
+        <div class="w-full flex flex-col h-screen overflow-y-hidden" style="margin-left: 16rem";>
             @include ('layout.editor.navbar')
 
             @include ('layout.editor.sidebarMobile')
-            <div class="w-full overflow-x-hidden border-t flex flex-col">
+            <div class="w-full overflow-x-hidden border-t flex flex-col flex-grow">
                 <main class="w-full flex-grow p-6">
                     @yield('content')
                 </main>

@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->text('almt_domisili')->nullable();
             $table->string('pendidikan')->nullable();
             $table->text('image')->nullable();
-            $table->integer('total')->nullable();
+            $table->bigInteger('total')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin\Setting;
+namespace App\Http\Controllers\editor\Setting;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class KeuntunganController extends Controller
     {
         $keuntungans = Keuntungan::all();
 
-        return view ('admin.keuntungan.index')    
+        return view ('editor.keuntungan.index')    
             ->with('keuntungans', $keuntungans);
     }
 
@@ -32,7 +32,7 @@ class KeuntunganController extends Controller
             'data' => Keuntungan::all(),
         ];
 
-        return view ('admin.keuntungan.create', $data);
+        return view ('editor.keuntungan.create', $data);
     }
 
     /**
@@ -68,7 +68,7 @@ class KeuntunganController extends Controller
     
         $keuntungan->save();
 
-        return redirect('admin/setting/keuntungan')->with('status', 'Keuntungan created!');
+        return redirect('editor/setting/keuntungan')->with('status', 'Keuntungan created!');
     }
 
     /**
@@ -96,7 +96,7 @@ class KeuntunganController extends Controller
             'data' => Keuntungan::all(),
         ];
 
-        return view('admin.keuntungan.edit', $data)->with('keuntungan', $keuntungan);
+        return view('editor.keuntungan.edit', $data)->with('keuntungan', $keuntungan);
     }
 
     /**
@@ -132,7 +132,7 @@ class KeuntunganController extends Controller
     
         $keuntungan->save();
 
-        return redirect('admin/setting/keuntungan')->with('status', 'Keuntungan created!');
+        return redirect('editor/setting/keuntungan')->with('status', 'Keuntungan created!');
     }
 
     /**
@@ -156,7 +156,7 @@ class KeuntunganController extends Controller
         $keuntungan->is_active = TRUE;
         $keuntungan->save();
    
-        return redirect(route('admin.setting.keuntungan.index'));
+        return redirect(route('editor.setting.keuntungan.index'));
 
     }
 }

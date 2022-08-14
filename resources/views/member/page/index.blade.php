@@ -99,9 +99,8 @@
                             </div>
                             <div class="sn-content">
                                 <h1 class="sn-title">{{$news->title}}</h1>
-                                <p>
-                                {{$news->content}}
-                                </p>
+                                {!!$news->content!!}
+   
                                 
                             </div>
                         </div>

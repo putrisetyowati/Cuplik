@@ -1,6 +1,6 @@
-<aside class="relative bg-gray-700 h-screen w-64 hidden sm:block shadow-xl">
+<aside class="fixed bg-gray-700 h-full w-64 hidden sm:block shadow-xl">
         
-        <div class="w-60">
+        <div class="w-full px-2 bg-white">
             <img src="{{asset('admin/assets/images/putih_cuplik_2011_fix.jpg')}}" width="400" alt="">
         </div>
         <nav class="text-white text-base font-semibold pt-3">
@@ -9,7 +9,10 @@
                 Dashboard
             </a>
 
-            <button class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 dropdown-btn">Setting 
+            <button class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 text-base dropdown-btn">
+                <i class="fas fa-tachometer-alt mr-3"></i>
+                Setting 
+                <i class="fas fa-angle-down ml-auto mr-2"></i>
             </button>
             <div class="dropdown-container">
                 <ul>
@@ -17,6 +20,7 @@
                     <li> <a href="{{route('editor.setting.tag.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('editor/setting/tag*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"> <i class="fas fa-thumbtack mr-3"></i>Tag</a></li>
                     <li> <a href="{{route('editor.setting.tag-sub.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('editor/setting/tag-sub*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"> <i class="fas fa-thumbtack mr-3"></i>Tag Jadi Sub</a></li>
                     <li> <a href="{{route('editor.setting.register.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('editor/setting/register*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"><i class="fas fa-thumbtack mr-3"></i>Editor</a></li>
+                    <li> <a href="{{route('editor.setting.keuntungan.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('editor/setting/register*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"><i class="fas fa-thumbtack mr-3"></i>Keuntungan</a></li>
                     <li> <a href="{{route('editor.setting.member.index')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900 {{ Request::is('editor/setting/member*') ? 'active font-bold bg-gray-900' : 'opacity-75 hover:opacity-100 hover:bg-gray-900' }}"> <i class="fas fa-thumbtack mr-3"></i>Member</a></li>
                 </ul>        
             </div>
@@ -43,7 +47,7 @@
                 Iklan Gambar
             </a>                      
           
-            <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
+            <!-- <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
 
             </div>
             <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
@@ -54,7 +58,7 @@
             </div>
             <div class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
 
-            </div>
+            </div> -->
             
             <!-- <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 hover:bg-gray-900">
                 <i class="fas fa-bullhorn mr-3"></i>

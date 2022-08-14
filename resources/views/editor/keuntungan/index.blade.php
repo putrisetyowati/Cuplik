@@ -1,4 +1,4 @@
-@extends('admin.app')
+@extends('editor.app')
 @section('title','Keuntungan')
 @section('content')
 
@@ -10,7 +10,7 @@
             </p>
         </div>
         <div class="col-span-2 place-self-end">
-            <a href="{{route('admin.setting.keuntungan.create')}}" class="rounded bg-cyan-500 hover:bg-cyan-700 py-2 px-4 text-white transition duration-300 font-semibold">+ Tambah Data</a>
+            <a href="{{route('editor.setting.keuntungan.create')}}" class="rounded bg-cyan-500 hover:bg-cyan-700 py-2 px-4 text-white transition duration-300 font-semibold">+ Tambah Data</a>
         </div>
     </div>
 
@@ -36,14 +36,14 @@
                         <td class="text-left py-3 px-4">Rp. {{number_format($data->nominal)}}</td>
                         <td class="text-left py-3 px-4">
                             @if ($data->is_active == 0)
-                                    <a href="{{route ('admin.setting.keuntungan.change.default', $data->id)}}" class="px-4 py-1 text-white font-light tracking-wider bg-green-500 rounded">ON</a>
+                                    <a href="{{route ('editor.setting.keuntungan.change.default', $data->id)}}" class="px-4 py-1 text-white font-light tracking-wider bg-green-500 rounded">ON</a>
                             @else
                                 Aktif
                             @endif
                         </td>
                         
                         <td class="flex space-x-2 text-left py-3 px-4">
-                    <a href="{{ url('admin/setting/keuntungan')}}/{{ $data->id }}/{{ 'edit' }}">
+                    <a href="{{ url('editor/setting/keuntungan')}}/{{ $data->id }}/{{ 'edit' }}">
                         <div
                             class="bg-green-500 inline-block py-1 px-2 hover:bg-green-700 text-white font-normal rounded transition duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
@@ -56,7 +56,7 @@
                             </svg>
                         </div>
                     </a>
-                    <form action="{{url('admin/setting/keuntungan')}}/{{$data->id}}" method="post">
+                    <form action="{{url('editor/setting/keuntungan')}}/{{$data->id}}" method="post">
                         @method('DELETE')
                         @csrf
                         <button type="submit"

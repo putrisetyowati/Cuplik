@@ -15,7 +15,7 @@ class CreateKeuntungansTable extends Migration
     {
         Schema::create('keuntungans', function (Blueprint $table) {
             $table->id();
-            $table->string('tahun')->unique();
+            $table->string('tahun');
             $table->bigInteger('nominal');
             $table->boolean('is_active')->default(FALSE);
             $table->timestamps();

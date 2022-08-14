@@ -62,6 +62,7 @@ Route::group([
             Route::resource('register', RegisterController::class);
             Route::resource('member', MemberController::class);
             Route::resource('keuntungan', KeuntunganController::class);
+            Route::get('keuntungan/{id}/default', 'KeuntunganController@default')->name('keuntungan.change.default');
         });
 
         Route::group([
@@ -104,6 +105,7 @@ Route::group([
             Route::resource('register', RegisterController::class);
             Route::resource('tag-sub', TagSubController::class);
             Route::resource('member', MemberController::class);
+            Route::resource('keuntungan', KeuntunganController::class);
         });
         
  
