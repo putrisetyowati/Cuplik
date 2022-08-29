@@ -29,13 +29,13 @@
                                 <li><a href="#">Hukum</a></li>
                                 <li><a href="#">Ekonomi</a></li>
                                 <li><a href="#">Ragam</a></li>
-                                <li><a href="#">Luar Negeri</a></li>
+                              
                                
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    <!-- <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
                            
                             <ul>
@@ -47,9 +47,9 @@
                                 <li><a href="#">Real Count</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     
-                    <div class="col-lg-3 col-md-6">
+                    <!-- <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
                         <h3 class="title">Pilih</h3>
                             <ul>
@@ -57,7 +57,9 @@
                                 <li><a href="#">VIDEO</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
+
+
                 </div>
             </div>
         </div>
@@ -81,12 +83,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 copyright">
-                        <p>Copyright &copy; <a href="">Your Site Name</a>. All Rights Reserved</p>
+                        <p>Copyright &copy; <a href="">TA 2022</a>. All Rights Reserved</p>
                     </div>
 
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     <div class="col-md-6 template-by">
-                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p>Designed By <a href="https://htmlcodex.com">TA 2022</a></p>
                     </div>
                 </div>
             </div>

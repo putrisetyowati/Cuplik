@@ -61,7 +61,7 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                            <a href="" class="nav-item nav-link active">Home</a>
+                            <a href="/" class="nav-item nav-link active">Home</a>
                             
                             @foreach ($menu as $data)
                             <a href="{{ url('menu')}}/{{ $data->id }}" class="nav-item nav-link">{{$data->name}}</a>
@@ -98,8 +98,8 @@
                                 <img src="{{asset('storage/img/news/'. $news->image)}}" />
                             </div>
                             <div class="sn-content">
-                                <h1 class="sn-title">{{$news->title}}</h1>
-                                {!!$news->content!!}
+                                <h1 class="sn-title">{{$news->title}}</h1>                            
+                                <p>{!!$news->content!!}</p>
    
                                 
                             </div>
@@ -115,7 +115,7 @@
                                 <div class="tab-news">
                                     <ul class="nav nav-pills nav-justified">
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="pill">IKLAN</a>
+                                            <a class="nav-link" data-toggle="pill">IKLAN BARIS</a>
                                         </li> 
                                     </ul>
 
@@ -123,9 +123,11 @@
                                         <div id="featured" class="container tab-pane active">
                                             @foreach ($iklan as $data)
                                             <div class="tn-news">
-                                                <div class="img">
+
+                                            {!!$data->content!!}
+                                                <!-- <div class="img">
                                                     <img src="{{asset('storage/img/iklan-gambar/'. $data->image)}}" width="350" height="350"/>
-                                                </div>
+                                                </div> -->
                                             </div>
                                                 
                                             @endforeach
@@ -137,30 +139,28 @@
         
 
                             <div class="sidebar-widget">
-                                <h2 class="sw-title">News Category</h2>
+                                <h2 class="sw-title">Menu News</h2>
                                 <div class="category">
                                     <ul>
-                                        <li><a href="">National</a><span>(98)</span></li>
-                                        <li><a href="">International</a><span>(87)</span></li>
-                                        <li><a href="">Economics</a><span>(76)</span></li>
-                                        <li><a href="">Politics</a><span>(65)</span></li>
-                                        <li><a href="">Lifestyle</a><span>(54)</span></li>
-                                        <li><a href="">Technology</a><span>(43)</span></li>
-                                        <li><a href="">Trades</a><span>(32)</span></li>
+
+                                    @foreach ($menu as $data)
+                                    <li><a href="">{{$data->name}}</a><span></span></li>
+                                        
+                                    @endforeach
+                                        
                                     </ul>
                                 </div>
                             </div>
                             
                             <div class="sidebar-widget">
-                                <h2 class="sw-title">Tags Cloud</h2>
+                                <h2 class="sw-title">Tags</h2>
                                 <div class="tags">
-                                    <a href="">National</a>
-                                    <a href="">International</a>
-                                    <a href="">Economics</a>
-                                    <a href="">Politics</a>
-                                    <a href="">Lifestyle</a>
-                                    <a href="">Technology</a>
-                                    <a href="">Trades</a>
+                                    <a href="">Sosial</a>
+                                    <a href="">Kebudayaan</a>
+                                    <a href="">Kebutuhan</a>
+                                    <a href="">Pemilu</a>
+                                    <a href="">Gaya hidup</a>
+                                    <a href="">Teknologi</a>
                                 </div>
                             </div>
                         </div>

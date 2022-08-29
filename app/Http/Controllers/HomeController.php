@@ -36,10 +36,13 @@ class HomeController extends Controller
             ->paginate(5);
 
         $menu = Menu::all();
+        // $menu = Menu::all()->count();
 
-        $popular = News::All()->random(2);
+        $popular = News::All()->random(5);
 
         $iklan_gambar = ImageAdvertisement::All();
+
+        $newss = News::all();
 
         $news = DB::table('news')->join('menus', 'news.id_menu', '=', 'menus.id')
         ->get();
@@ -56,7 +59,8 @@ class HomeController extends Controller
              ->with('menu', $menu)
              ->with('news', $news)
              ->with('popular', $popular)
-             ->with('iklan_gambar', $iklan_gambar);
+             ->with('iklan_gambar', $iklan_gambar)
+             ->with('newss', $newss);
      }
 
      public function show($id)
@@ -65,6 +69,8 @@ class HomeController extends Controller
 
         return view('member.main.show');
      }
+
+     
 
      public function tagsub($id)
      {

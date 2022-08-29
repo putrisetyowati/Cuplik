@@ -22,7 +22,7 @@
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Gambar</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date</th>                   
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Source</th>                    
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Desc</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Menu</th>
                     <!-- <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Menu</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Tag</th> -->
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Default</th>
@@ -49,7 +49,7 @@
                     </td>
                     <td class="text-left py-3 px-4">{{$data->created_at}}</td>
                     <td class="text-left py-3 px-4">{{$data->source}}</td>
-                    <td class="text-left py-3 px-4">{{$data->desc}}</td>
+                    <td class="text-left py-3 px-4">{{$data->menu->name}}</td>
                     @if ($data->is_active == 1)
                     <td class="text-left py-3 px-4">Yes</td>   
                     @else

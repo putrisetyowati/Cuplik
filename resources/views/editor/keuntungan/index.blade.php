@@ -9,9 +9,9 @@
             <i class="fas fa-list mr-3"></i> Keuntungan
             </p>
         </div>
-        <div class="col-span-2 place-self-end">
+        <!-- <div class="col-span-2 place-self-end">
             <a href="{{route('editor.setting.keuntungan.create')}}" class="rounded bg-cyan-500 hover:bg-cyan-700 py-2 px-4 text-white transition duration-300 font-semibold">+ Tambah Data</a>
-        </div>
+        </div> -->
     </div>
 
     <div class="bg-white overflow-auto">
@@ -22,7 +22,7 @@
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Tahun</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Keuntungan</th>                    
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Status</th>                    
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</th>
+                    <!-- <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</th> -->
                 </tr>
             </thead>
             <tbody class="text-gray-700">
@@ -42,7 +42,7 @@
                             @endif
                         </td>
                         
-                        <td class="flex space-x-2 text-left py-3 px-4">
+                        <!-- <td class="flex space-x-2 text-left py-3 px-4">
                     <a href="{{ url('editor/setting/keuntungan')}}/{{ $data->id }}/{{ 'edit' }}">
                         <div
                             class="bg-green-500 inline-block py-1 px-2 hover:bg-green-700 text-white font-normal rounded transition duration-300">
@@ -70,7 +70,7 @@
                             </svg>
                         </button>
                     </form>
-                </td>
+                </td> -->
                     </tr>
                         
                     @endforeach

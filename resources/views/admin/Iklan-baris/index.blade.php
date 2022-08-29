@@ -30,7 +30,7 @@
                                 @foreach ($line_advertisement as $data)
                                 <tr>
                                     <td class="text-left py-3 px-4">{{$i++}}</td>
-                                    <td class="text-left py-3 px-4">{{$data->content}}</td> 
+                                    <td class="text-left py-3 px-4">{!!$data->content!!}</td> 
                                     
                                     <td class="flex space-x-2 text-left py-3 px-4">
                     <a href="{{ url('admin/iklan-baris')}}/{{ $data->id }}/{{ 'edit' }}">

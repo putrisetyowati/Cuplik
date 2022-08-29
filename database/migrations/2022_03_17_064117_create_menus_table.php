@@ -17,8 +17,8 @@ class CreateMenusTable extends Migration
             $table->id();
             $table->string('short');
             $table->string('name');
-            $table->string('link');
-            $table->string('level');
+            $table->string('link')->nullable();
+            $table->string('level')->nullable();
             $table->boolean('is_active')->default(TRUE);
             $table->timestamps();
         });

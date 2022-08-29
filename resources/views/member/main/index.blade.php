@@ -134,13 +134,13 @@
                     
                         <h2>Sosial</h2>
                         <div class="row cn-slider">
-                            @foreach ( $news as $data)
+                            @foreach ( $newss as $data)
                             @if ($data->id_menu=='1')
                                 <div class="col-lg-6">
                                     <div class="cn-img">
                                         <img src="{{asset('storage/img/news/'. $data->image)}}" width="260" height="160"/>
                                         <div class="cn-title">
-                                            <a href="" maxleng style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{$data->title}}</a>
+                                            <a href="{{ url('/news')}}/{{ $data->id }}" maxleng style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{$data->title}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -151,20 +151,77 @@
                     
                         <h2>Politik</h2>
                         <div class="row cn-slider">
-                            @foreach ( $news as $data)
+                            @foreach ( $newss as $data)
                                 @if ($data->id_menu=='2')
                         
                                     <div class="col-lg-6">
                                         <div class="cn-img">
                                             <img src="{{asset('storage/img/news/'. $data->image)}}" width="260" height="160"/>
                                             <div class="cn-title">
-                                                <a href="">{{$data->title}}</a>
+
+                                                <a href="{{ url('/news')}}/{{ $data->id }}" maxleng style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{$data->title}}</a>
                                             </div>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         </div> 
+
+                        <h2>Hukum</h2>
+                        <div class="row cn-slider">
+                            @foreach ( $newss as $data)
+                                @if ($data->id_menu=='3')
+                        
+                                    <div class="col-lg-6">
+                                        <div class="cn-img">
+                                            <img src="{{asset('storage/img/news/'. $data->image)}}" width="260" height="160"/>
+                                            <div class="cn-title">
+
+                                                <a href="{{ url('/news')}}/{{ $data->id }}" maxleng style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{$data->title}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        
+                        <h2>Ekonomi</h2>
+                        <div class="row cn-slider">
+                            @foreach ( $newss as $data)
+                                @if ($data->id_menu=='4')
+                        
+                                    <div class="col-lg-6">
+                                        <div class="cn-img">
+                                            <img src="{{asset('storage/img/news/'. $data->image)}}" width="260" height="160"/>
+                                            <div class="cn-title">
+
+                                                <a href="{{ url('/news')}}/{{ $data->id }}" maxleng style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{$data->title}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+
+                        <h2>Ragam</h2>
+                        <div class="row cn-slider">
+                            @foreach ( $newss as $data)
+                                @if ($data->id_menu=='5')
+                        
+                                    <div class="col-lg-6">
+                                        <div class="cn-img">
+                                            <img src="{{asset('storage/img/news/'. $data->image)}}" width="260" height="160"/>
+                                            <div class="cn-title">
+
+                                                <a href="{{ url('/news')}}/{{ $data->id }}" maxleng style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{$data->title}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+
+                        
                         
                         
                     </div>
@@ -227,7 +284,7 @@
                                         <img src="{{asset('storage/img/news/'. $data->image)}}" />
                                     </div>
                                     <div class="tn-title">
-                                        <a href="">{{$data->title}}</a>
+                                        <a href="{{ url('/news')}}/{{ $data->id }}">{{$data->title}}</a>
                                     </div>
                                 </div> 
                                 @endforeach

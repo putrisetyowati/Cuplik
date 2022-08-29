@@ -19,8 +19,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::with('menu')
-        ->latest()
-        ->paginate(5);
+        ->latest()->get();
 
         return view ('admin.berita.index')
         ->with('news', $news);

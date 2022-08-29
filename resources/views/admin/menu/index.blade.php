@@ -20,9 +20,7 @@
                 <tr>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Sortir</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nama</th>                    
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Link</th>                    
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Level</th> 
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nama</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Default</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</th>
                 </tr>
@@ -36,8 +34,6 @@
                         <td class="text-left py-3 px-4">{{$i++}}</td>
                         <td class="text-left py-3 px-4">{{$data->short}}</td>
                         <td class="text-left py-3 px-4">{{$data->name}}</td>
-                        <td class="text-left py-3 px-4">{{$data->link}}</td>
-                        <td class="text-left py-3 px-4">{{$data->level}}</td>
                         <td class="text-left py-3 px-4">{{$data->is_active}}</td> 
                         
                         <td class="flex space-x-2 text-left py-3 px-4">

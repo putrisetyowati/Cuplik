@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PedomanSeeder::class);
         $this->call(RedaksiSeeder::class);
         $this->call(ImageAdvertisementSeeder::class);
+        $this->call(LineAdvertisementSeeder::class);
     }
 }

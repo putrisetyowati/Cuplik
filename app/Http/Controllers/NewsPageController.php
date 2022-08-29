@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\SubTag;
 use App\Models\Menu;
 use App\Models\News;
-use App\Models\ImageAdvertisement;
+use App\Models\LineAdvertisement;
 
 class NewsPageController extends Controller
 {
@@ -56,7 +56,7 @@ class NewsPageController extends Controller
         ->paginate(5);
         $menu = Menu::all();
 
-        $iklan = ImageAdvertisement::All();
+        $iklan = LineAdvertisement::All();
 
         return view('member.page.index')
         ->with('news', $news)
